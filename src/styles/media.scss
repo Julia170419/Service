@@ -139,11 +139,13 @@
     display: none;
 }
 .swiper--open {
+    margin-bottom: 46px;
     height: 334px;
     transition: all 0.3s;
 }
     .swiper-repair--open {
-        height: 475px;
+        height: 500px;
+        margin-bottom: 46px;
     }
 .swiper-wrapper {
     min-height: 148px;
@@ -174,12 +176,12 @@
     justify-content: start;
     display: flex;
     transition: all 0.3s;
-    margin-top: 24px;
+    // margin-top: 24px;
     transition: all 0.3s;
     margin-left: 16px;
 }
 .all-btn--open {
-    margin-top: 46px;
+    // margin-top: 46px;
     transition: all 0.3s;
 }
 .info__arrows--open {
@@ -286,6 +288,31 @@
 .feedback-message {
     width: 440px;
 }
+
+// swiperBrandsSlides
+.swiper-slide:nth-child(4),
+.swiper-slide:nth-child(8),
+.swiper-slide:nth-child(9),
+.swiper-slide:nth-child(10),
+.swiper-slide:nth-child(11) {
+    display: none;
+};
+
+// swiperRepairSlides
+.swiper-slide-repair:nth-child(4),
+.swiper-slide-repair:nth-child(5),
+.swiper-slide-repair:nth-child(6),
+.swiper-slide-repair:nth-child(7),
+.swiper-slide-repair:nth-child(8),
+.swiper-slide-repair:nth-child(9) {
+    display: none;
+};
+}
+
+@media(min-width: 984px) {
+    .swiper--open {
+        height: 260px;
+    }
 }
 
 @media(min-width:1120px) {
@@ -456,10 +483,10 @@
         height: 248px;
     }
     .swiper--open {
-        max-height: 334px;
+        height: 320px;
     }
     .swiper-repair--open {
-        max-height: 475px;
+        max-height: 490px;
     }
     .swiper-slide:nth-child(6) {
         padding-top: 11px;
@@ -504,6 +531,26 @@
 .feedback-message {
     box-shadow: none;
 }
+
+// swiperBrandsSlides
+.swiper-slide:nth-child(4),
+.swiper-slide:nth-child(8) {
+    display: block;
+};
+
+// swiperRepairSlides
+.swiper-slide-repair:nth-child(4) {
+    display: block;
+};
+.swiper-slide-repair:nth-child(8) {
+    display: none;
+};
+}
+
+@media(min-width: 1304px) {
+    .swiper--open {
+        height: 230px;
+    }
 }
 
 @media(min-width: 1800px) {
@@ -513,5 +560,29 @@
         .swiper--open {
         height: auto;
         max-height: 160px;
+    }
+    .swiper-repair--open {
+        max-height: 318px;
+    }
+}
+
+@media(min-width: 2296px) {
+    .swiper {
+        height: 100px;
+    }
+    .swiper--open {
+        height: auto;
+        max-height: 140px;
+    }
+    .swiper-repair {
+        height: 145px;
+    }
+    .swiper-repair--open {
+        height: 320px;
+    }
+}
+@media(min-width: 3040px) {
+    .swiper--open {
+        height: 100px;
     }
 }

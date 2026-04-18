@@ -2,6 +2,7 @@ import './styles/header.scss'
 import './styles/main.scss'
 import './styles/footer.scss'
 import './styles/media.scss'
+// import './brands.js'
 
 let burgerAside = document.querySelector('.burger-aside');
 let burger = document.querySelector('.burger');
@@ -156,7 +157,7 @@ const slider = document.querySelector('.swiper');
 let swiperInstance;
 
 function mobileSlider() {
-    if (window.innerWidth <= 768 && slider.dataset.mobile == 'false') {
+    if (window.innerWidth < 768 && slider.dataset.mobile == 'false') {
         
         swiperInstance = new Swiper(".swiper", {
             slidesPerView: 'auto',
@@ -190,24 +191,11 @@ function mobileSlider() {
 mobileSlider();
 window.addEventListener('resize', () => mobileSlider());
 
-let swiperSlide7 = document.querySelector('.swiper-slide:nth-child(7)');
+let swiperSlide4 = document.querySelector('.swiper-slide:nth-child(4)');
 let swiperSlide8 = document.querySelector('.swiper-slide:nth-child(8)');
 let swiperSlide9 = document.querySelector('.swiper-slide:nth-child(9)');
 let swiperSlide10 = document.querySelector('.swiper-slide:nth-child(10)');
 let swiperSlide11 = document.querySelector('.swiper-slide:nth-child(11)');
-
-if (window.innerWidth > 768) {
-    swiperSlide7.classList.add('swiper-slide--none');
-    swiperSlide8.classList.add('swiper-slide--none');
-    swiperSlide9.classList.add('swiper-slide--none');
-    swiperSlide10.classList.add('swiper-slide--none');
-    swiperSlide11.classList.add('swiper-slide--none');
-};
-
-if (window.innerWidth >= 1120) {
-    swiperSlide7.classList.remove('swiper-slide--none');
-    swiperSlide8.classList.remove('swiper-slide--none');
-};
 
 let swiperButton = document.querySelector('.all-btn');
 let infoArrows = swiperButton.querySelector('.info__arrows');
@@ -227,16 +215,18 @@ swiperButton.addEventListener('click', function (evt) {
     slider.classList.remove('swiper--open');
     swiperWrapper.classList.remove('swiper-wrapper--open');
 
-    if (window.innerWidth < 1120) {
-        swiperSlide7.classList.add('swiper-slide--none');
-        swiperSlide8.classList.add('swiper-slide--none');
-        swiperSlide9.classList.add('swiper-slide--none');
-        swiperSlide10.classList.add('swiper-slide--none');
-        swiperSlide11.classList.add('swiper-slide--none');
+        if (window.innerWidth < 1120) {
+        swiperSlide4.style.display = 'none';
+        swiperSlide8.style.display = 'none';
+        swiperSlide9.style.display = 'none';
+        swiperSlide10.style.display = 'none';
+        swiperSlide11.style.display = 'none';
     } else {
-        swiperSlide9.classList.add('swiper-slide--none');
-        swiperSlide10.classList.add('swiper-slide--none');
-        swiperSlide11.classList.add('swiper-slide--none');
+        swiperSlide4.style.display = 'block';
+        swiperSlide8.style.display = 'block';
+        swiperSlide9.style.display = 'none';
+        swiperSlide10.style.display = 'none';
+        swiperSlide11.style.display = 'none';
     };
     } else {
     swiperButton.classList.add('all-btn--open');
@@ -248,17 +238,19 @@ swiperButton.addEventListener('click', function (evt) {
     slider.classList.add('swiper--open');
     swiperWrapper.classList.add('swiper-wrapper--open');
 
-    if (window.innerWidth > 768 && window.innerWidth < 1120) {
-        swiperSlide7.classList.remove('swiper-slide--none');
-        swiperSlide8.classList.remove('swiper-slide--none');
-        swiperSlide9.classList.remove('swiper-slide--none');
-        swiperSlide10.classList.remove('swiper-slide--none');
-        swiperSlide11.classList.remove('swiper-slide--none');
+        if (window.innerWidth < 1120) {
+        swiperSlide4.style.display = 'block';
+        swiperSlide8.style.display = 'block';
+        swiperSlide9.style.display = 'block';
+        swiperSlide10.style.display = 'block';
+        swiperSlide11.style.display = 'block';
     } else {
-        swiperSlide9.classList.remove('swiper-slide--none');
-        swiperSlide10.classList.remove('swiper-slide--none');
-        swiperSlide11.classList.remove('swiper-slide--none');
-    }
+        swiperSlide4.style.display = 'block';
+        swiperSlide8.style.display = 'block';
+        swiperSlide9.style.display = 'block';
+        swiperSlide10.style.display = 'block';
+        swiperSlide11.style.display = 'block';
+    };
     };
 });
 
@@ -291,20 +283,19 @@ repairButton.addEventListener('click', function (evt) {
     swiperRepairWrapper.classList.remove('swiper-wrapper--open');
 
     if (window.innerWidth < 1120) {
-        repairSlide4.classList.add('swiper-slide--none');
-        repairSlide5.classList.add('swiper-slide--none');
-        repairSlide6.classList.add('swiper-slide--none');
-        repairSlide7.classList.add('swiper-slide--none');
-        repairSlide8.classList.add('swiper-slide--none');
-        repairSlide9.classList.add('swiper-slide--none');
-    } else {
-        repairSlide5.classList.add('swiper-slide--none');
-        repairSlide6.classList.add('swiper-slide--none');
+        repairSlide4.style.display = 'none';
+        repairSlide5.style.display = 'none';
+        repairSlide6.style.display = 'none';
         repairSlide7.style.display = 'none';
         repairSlide8.style.display = 'none';
-        // repairSlide7.classList.add('swiper-slide--none');
-        // repairSlide8.classList.add('swiper-slide--none');
-        repairSlide9.classList.add('swiper-slide--none');
+        repairSlide9.style.display = 'none';
+    } else {
+        repairSlide4.style.display = 'block';
+        repairSlide5.style.display = 'none';
+        repairSlide6.style.display = 'none';
+        repairSlide7.style.display = 'none';
+        repairSlide8.style.display = 'none';
+        repairSlide9.style.display = 'none';
     };
     } else {
     repairButton.classList.add('all-btn--open');
@@ -316,22 +307,12 @@ repairButton.addEventListener('click', function (evt) {
     swiperRepair.classList.add('swiper-repair--open');
     swiperRepairWrapper.classList.add('swiper-wrapper--open');
 
-    if (window.innerWidth > 768 && window.innerWidth < 1120) {
-        repairSlide4.classList.remove('swiper-slide--none');
-        repairSlide5.classList.remove('swiper-slide--none');
-        repairSlide6.classList.remove('swiper-slide--none');
-        repairSlide7.classList.remove('swiper-slide--none');
-        repairSlide8.classList.remove('swiper-slide--none');
-        repairSlide9.classList.remove('swiper-slide--none');
-    } else {
-        repairSlide5.classList.remove('swiper-slide--none');
-        repairSlide6.classList.remove('swiper-slide--none');
-        repairSlide7.style.display = 'flex';
-        repairSlide8.style.display = 'flex';
-        // repairSlide7.classList.remove('swiper-slide--none');
-        // repairSlide8.classList.remove('swiper-slide--none');
-        repairSlide9.classList.remove('swiper-slide--none');
-    }
+        repairSlide4.style.display = 'block';
+        repairSlide5.style.display = 'block';
+        repairSlide6.style.display = 'block';
+        repairSlide7.style.display = 'block';
+        repairSlide8.style.display = 'block';
+        repairSlide9.style.display = 'block';
     };
 });
 
